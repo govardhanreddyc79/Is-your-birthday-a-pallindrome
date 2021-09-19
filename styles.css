@@ -10,18 +10,15 @@
     margin: auto;
 }
 body {
-    /* text-align: center; */
     font-family:'Source Serif Pro', serif;
     background-color:var(--white);
     
 }
 .heading {
-    /* color: var(--primary-color); */
     font-size: 2rem;
     margin-top: 50px;
     text-align: center;
     font-weight: bold;
-    /* padding-top: 5rem; */
 }
 
 .check-btn {
