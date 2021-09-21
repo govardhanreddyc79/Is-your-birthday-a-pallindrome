@@ -193,25 +193,28 @@ function clickHandler(){
       day:Number(listOfDate[2]),
       month:Number(listOfDate[1]),
       year:Number(listOfDate[0])
+      }
+    var pallindromeFlag = checkPallindromeForAllPatterns(date)
+    if(pallindromeFlag){
+        showMessage("Yayy !!!, Your Birthday is Pallindrome")
+        }
+    else{
+        var nextPallindromeList = getnextPallindrome(date)
+        var previousPallindromList = getpPreviousPallindrome(date)
+        if(nextPallindromeList[0]>previousPallindromList[0])
+        {
+          var previousPallindrome = previousPallindromList[1].day +"-"+previousPallindromList[1].month +"-"+previousPallindromList[1].year
+          showMessage("The nearest palindrome date is "+ previousPallindrome+", you missed by "+ previousPallindromList[0]+" days.")
+        }else
+        {
+          var nextPallindrome = nextPallindromeList[1].day +"-"+nextPallindromeList[1].month +"-"+nextPallindromeList[1].year
+          showMessage("The nearest palindrome date is "+ nextPallindrome+", you missed by "+ nextPallindromeList[0]+" days.")
+        }
+      } 
     }
-  }
-  var pallindromeFlag = checkPallindromeForAllPatterns(date)
-  if(pallindromeFlag){
-      showMessage("Yayy !!!, Your Birthday is Pallindrome")
-      }
   else{
-      var nextPallindromeList = getnextPallindrome(date)
-      var previousPallindromList = getpPreviousPallindrome(date)
-      if(nextPallindromeList[0]>previousPallindromList[0])
-      {
-        var previousPallindrome = previousPallindromList[1].day +"-"+previousPallindromList[1].month +"-"+previousPallindromList[1].year
-        showMessage("The nearest palindrome date is "+ previousPallindrome+", you missed by "+ previousPallindromList[0]+" days.")
-      }else
-      {
-        var nextPallindrome = nextPallindromeList[1].day +"-"+nextPallindromeList[1].month +"-"+nextPallindromeList[1].year
-        showMessage("The nearest palindrome date is "+ nextPallindrome+", you missed by "+ nextPallindromeList[0]+" days.")
-      }
-} 
+    alert("Please fill out all Fields")
+  }
 }
 
 
